@@ -1,0 +1,204 @@
+/* Really Me — site styles. Brand tokens from theme.js / design handoff.
+   Fonts self-hosted (fonts/): no external requests, no trackers. */
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('fonts/nunito-sans-latin-400-normal.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('fonts/nunito-sans-latin-700-normal.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/manrope-latin-400-normal.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/manrope-latin-800-normal.woff2') format('woff2');
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+
+:root {
+  --ink: #1A1A2E;          /* theme.js textPrimary */
+  --tile: #15171E;         /* wordmark icon tile */
+  --muted: #666666;        /* theme.js textSecondary */
+  --soft: #888888;         /* theme.js textMuted */
+  --bg: #FFFFFF;
+  --border: #E0E0E0;
+  --divider: #F0F0F0;
+  --green: #1A7F37;        /* confirmGreen */
+  --green-bright: #3FBF63; /* icon check accent */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* ---------- wordmark lockup ---------- */
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 56px;
+}
+
+.wordmark a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tile {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.wordtext {
+  font-family: 'Manrope', 'Nunito Sans', sans-serif;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+  color: var(--tile);
+}
+
+.wordtext b { font-weight: 800; }
+.wordtext span { font-weight: 400; margin-left: 0.06em; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 96px 0;
+}
+
+h1 {
+  font-family: 'Manrope', 'Nunito Sans', sans-serif;
+  font-size: clamp(40px, 8vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+.sub {
+  font-size: clamp(19px, 3vw, 22px);
+  color: var(--muted);
+  margin-bottom: 48px;
+}
+
+.notify {
+  display: inline-block;
+  background: var(--green);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 700;
+  padding: 17px 28px;
+  border-radius: 12px;
+  min-height: 56px;
+}
+
+.notify:hover { background: #166B2E; }
+
+.notify:focus-visible,
+footer a:focus-visible,
+.wordmark a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  border-top: 1px solid var(--divider);
+  padding: 28px 0;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+footer nav { display: flex; gap: 24px; }
+
+footer a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+footer a:hover { border-bottom-color: var(--ink); }
+
+.quiet { color: var(--soft); }
+
+/* ---------- legal pages ---------- */
+
+.legal { padding: 72px 0 96px; }
+
+.legal .wordmark { margin-bottom: 48px; }
+
+.legal h1 {
+  font-size: clamp(30px, 5vw, 40px);
+  margin-bottom: 12px;
+}
+
+.updated {
+  color: var(--soft);
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.legal h2 {
+  font-family: 'Manrope', 'Nunito Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 36px 0 10px;
+}
+
+.legal p, .legal li {
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.legal ul { padding-left: 22px; margin-bottom: 12px; }
+
+.legal a { color: var(--green); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
