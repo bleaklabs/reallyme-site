@@ -164,6 +164,15 @@ footer a:hover { border-bottom-color: var(--ink); }
 
 .quiet { color: var(--soft); }
 
+/* attribution, not navigation: sits in the quiet line, weight only */
+footer .by-link {
+  color: inherit;
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+footer .by-link:hover { color: var(--ink); }
+
 /* ---------- legal pages ---------- */
 
 .legal { padding: 72px 0 96px; }
