@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+#
+# /get is canonical and is handled by functions/get.js (it needs to log the hit).
+# /download is only a courtesy alias for the guessable word: it hands off to /get
+# so there is exactly one place the destination is configured.
+/download  /get  302
